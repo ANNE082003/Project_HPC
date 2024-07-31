@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Language" content="en">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+       
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
+        <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+        <!--<link rel="icon" href="<?php echo base_url('assets/img/favicon.ico');?>" type="image/x-icon">
+         Disable tap highlight on IE 
+        <meta name="msapplication-tap-highlight" content="no">-->
+
+        <link href="./assets/scripts/main.8d288f825d8dffbbe55e.js" rel="stylesheet"> 
+      <!--  <link href="<?= base_url('assets/css/font-awesome.min.css'); ?>" rel="stylesheet">  --> 
+         
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />    
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="./assets/scripts/main.8d288f825d8dffbbe55e.js"></script>
+        <script type="text/javascript" src="./assets/scripts/main.8d288f825d8dffbbe55e.js"></script>      
+        <script type="text/javascript" src="./assets/scripts/main.8d288f825d8dffbbe55e.js"></script>
+        <script type="text/javascript" src="./assets/scripts/main.8d288f825d8dffbbe55e.js"></script>             
+        <script type="text/javascript" src="./assets/scripts/main.8d288f825d8dffbbe55e.js"></script>
+        <link rel="stylesheet" href="./assets/scripts/main.8d288f825d8dffbbe55e.css">
+        
+ <!-- for datatable-->
+        <link href="./assets/scripts/main.8d288f825d8dffbbe55e.css" rel="stylesheet">    
+        <script type="text/javascript" src="./assets/js/pdfmake.min.js"></script>
+         <script type="text/javascript" src="./assets/js/vfs_fonts.js"></script> 
+        <script type="text/javascript" src="<?= base_url('assets/js/datatables.min.js');?>"></script>
+       
+    </head>
+    <body>
+       
+        <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar">
+            <div class="app-header header-shadow">
+                <div class="app-header__logo">
+                    <div class="logo-src"><?= APP_NAME; ?></div>
+                    <div class="header__pane ml-auto">
+                        <div>
+                            <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-header__mobile-menu">
+                    <div>
+                        <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-header__menu">
+                    <span>
+                        <a href="<?= site_url('user-logout'); ?>" class="btn-icon btn-icon-only btn btn-primary btn-sm ">
+                            <span class="btn-icon-wrapper">
+                                <i class="fa fa-lock fa-w-6"></i>
+                            </span>
+                        </a>
+                    </span>
+                </div>
+        <div class="app-header__content">
+            <div class="app-header-right">    
+                <div class="header-btn-lg pr-0">
+                    <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                            <div class="widget-content-left">
+                                <div class="btn-group">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                      
+                                        <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                    </a>
+                                    <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-menu-header">
+                                            <div class="dropdown-menu-header-inner bg-info">
+                                                <div class="menu-header-image opacity-2"></div>
+                                                <div class="menu-header-content text-left">
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">                             
+                                                            <div class="widget-content-left">
+                                                                <div class="widget-heading"><?= $user[0]->username ?>
+                                                                </div>
+                                                               
+                                                            </div>
+                                                            <div class="widget-content-right mr-2">
+                                                                 <a href="<?= site_url('user-logout'); ?>" class="btn-pill btn-shadow btn-shine btn btn-focus">
+                                                               Logout
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="scroll-area-xs">
+                                            <div class="scrollbar-container ps">
+                                                <ul class="nav flex-column">
+                                                                                    
+                                                    <li class="nav-item">
+                                                        <a href="<?php echo base_url('changepassword'); ?>" class="nav-link">Change Password
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                       
+                                    
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget-content-left  ml-3 header-user-info">
+                                <div class="widget-heading">
+                                    <?= $user[0]->username?>
+                                </div>
+                               
+                            </div>
+                            <div class="widget-content-right header-user-info ml-3">
+                                <a href="<?= site_url('user-logout'); ?>"class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                                            <i class="fa text-white fa-lock pr-1 pl-1"></i>
+                                        </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div> 
+            <div class="app-main">
+    <div class="app-sidebar sidebar-shadow">
+        <div class="app-header__logo">
+            <div class="logo-src"></div>
+            <div class="header__pane ml-auto">
+                <div>
+                    <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="app-header__mobile-menu">
+            <div>
+                <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="app-header__menu">
+            <span>
+                <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                    <span class="btn-icon-wrapper">
+                        <i class="fa fa-ellipsis-v fa-w-6"></i>
+                    </span>
+                </button>
+            </span>
+        </div> 
+
+           <div class="scrollbar-sidebar">
+            <div class="app-sidebar__inner">
+                <ul class="vertical-nav-menu">
+                    <li class="app-sidebar__heading">Menu</li>
+                    <li >
+                        <a href="<?php echo site_url('informistadmin/dashboard'); ?>">
+                            <i class="metismenu-icon fa fa-tachometer" aria-hidden="true"></i>
+                            Dashboards
+                            <i class="metismenu-state-icon"></i>
+                        </a>
+                    </li>
+                   
+                   <li >
+                        <a href="javascript:void(0);">
+                            <i class="metismenu-icon fa fa-user"></i>
+                            Admin
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                           
+                            <li>
+                                <a href="" >
+                                    <i class="metismenu-icon">
+                                    </i>Access Role
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" >
+                                    <i class="metismenu-icon">
+                                    </i>Assign Role
+                                </a>
+                            </li>
+                             <li>
+                                <a href="">
+                                    <i class="metismenu-icon">
+                                    </i>Employee
+                                </a>
+                            </li>
+
+                             
+                          
+                        </ul>
+                    </li>
+
+                   
+                     <li >
+                        <a href="javascript:void(0);">
+                            <i class="metismenu-icon fa fa-tags"></i>
+                            Master
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>            
+                          
+                            <li>
+                                <a href="">
+                                    <i class="metismenu-icon">
+                                    </i>Configuration
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    <i class="metismenu-icon">
+                                    </i>Page
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    <i class="metismenu-icon">
+                                    </i>Wire/Category/Slug
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="">
+                                    <i class="metismenu-icon">
+                                    </i>Category Mapping
+                                </a>
+                            </li>
+                        </ul>
+                    </li>  
+
+
+                     <li >
+                        <a href="javascript:void(0);">
+                            <i class="metismenu-icon fa fa-pencil-square-o"></i>
+                            News
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>            
+                          
+                            <li>
+                                <a href="">
+                                    <i class="metismenu-icon">
+                                    </i>Create News
+                                </a>
+                            </li>
+
+                             
+                            
+                        </ul>
+                    </li>  
+
+
+                   
+
+                     
+                </ul>
+            </div>
+        </div>
+    </div> 
+    <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="app-page-title">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-heading">
+                                <div class="page-title-icon">
+                                <i class="pe-7s-medal icon-gradient bg-tempting-azure">
+                                </i>
+                                </div>
+                                <div><?= $title; ?></div>
+                            </div>
+                                
+                        </div>
+                    </div>    
+
+
+<div class="main-card mb-3 card">
+                        <div class="card-body">
+                
+                                    <div class="container">
+                                        <form action="/add_faq" method="post">
+                                            <div class="mb-3">
+                                                <h3>Add FAQ'S</h3>
+                                                <label for="title" class="form-label">Question</label>
+                                                <input type="text" class="form-control" id="question" name="question">
+                                                
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="desc" class="form-label">Answer/Solution</label>
+                                                <input type="text" class="form-control" id="answer" name="answer">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Add</button>
+                                        </form>
+                                        </div>
+                                            
+                                       
+
+                                       
+
+                            
+
+                             
+
+                           
+
+                            
+
+                          
+                                           
+                                        
+                                       
+                                       <button class="mt-2 btn btn-primary update" id="updatedata" style="display: none;">Update</button>
+                                        
+                                </div>
+                    </form>
+                        </div>
+                    </div>
+                    <div class="container my-3">
+                        <h2>List of FAQ's</h2>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">SNo.</th>
+                                <th scope="col">Question</th>
+                                <th scope="col">Answer</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for faq in faqs %}
+                                <tr>
+                                    <!-- loop.index used to maintain continuity in sno even if an entry is deleted --> 
+                                    <th scope="row">{{loop.index}}</th>
+                                    <td>{{faq.question}}</td>
+                                    <td>{{faq.answer}}</td>
+                                    <td>{{faq.date_created}}</td>
+                                    <td>
+                                        <a href="/delete/{{faq.sno}}" type="button" class="btn btn-outline-primary btn-sm mx-0">Delete</button>
+                                        <a href="/update/{{faq.sno}}" type="button" class="btn btn-outline-primary btn-sm mx-0">Update</button>
+                                        <a href="/view/{{faq.sno}}" type="button" class="btn btn-outline-primary btn-sm mx-0">View</button>
+                                            
+                                        </td>
+                                  </tr>
+                                  
+                                {% endfor %}
+                            
+                              
+                            </tbody>
+                          </table>
+                    </div>
+
+
+                    <div class="main-card mb-3 card">
+                        <div class="card-body">
+                            <!-- <table style="width: 100%;" id="stateList" class="table table-hover table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Category Of</th>
+                                    <th>Page Name</th>
+                                    <th>Url</th>
+                                    <th>Show nav</th> 
+                                    <th>Show Thumb Image</th>                                    
+                                    <th>Action</th>
+                                    
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Category Of</th>
+                                    <th>Page Name</th> 
+                                    <th>Url</th> 
+                                   <th>show nav</th> 
+                                    <th>Show Thumb Image</th>                                       
+                                    <th>Action</th>
+                                </tr>
+                                </tfoot>
+                            </table> -->
+                        </div>
+                    </div>
+                </div>
+                 </div>
+    </div>
+    </div>
+
+
+<div class="app-drawer-overlay d-none animated fadeIn"></div>
+
+
+</body>
+</html>   
+<script type="text/javascript" src="./assets/scripts/main.8d288f825d8dffbbe55e.js"></script>       
+<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>  
+<script type="text/javascript" src="assets/scripts/main/master/category.js"></script>   
+   
+            

@@ -1,0 +1,77 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+    
+
+<div class="app-main__outer">
+         
+       
+<div class="main-card mb-3 card">
+                        <div class="card-body">
+                    <div class="container">
+                        <form action="/add_faq" method="post">
+                            <div class="mb-3">
+                                <h3>Add FAQ'S</h3>
+                                <label for="title" class="form-label">Question</label>
+                                <input type="text" class="form-control" id="question" name="question">
+                                
+                            </div>
+                            <div class="mb-3">
+                                <label for="desc" class="form-label">Answer/Solution</label>
+                                <input type="text" class="form-control" id="answer" name="answer">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        </div>
+                        <div class="container my-3">
+                            <h2>List of FAQ's</h2>
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">SNo.</th>
+                                    <th scope="col">Question</th>
+                                    <th scope="col">Answer</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for faq in faqs %}
+                                    <tr>
+                                        <!-- loop.index used to maintain continuity in sno even if an entry is deleted --> 
+                                        <th scope="row">{{loop.index}}</th>
+                                        <td>{{faq.question}}</td>
+                                        <td>{{faq.answer}}</td>
+                                        <td>{{faq.date_created}}</td>
+                                        <td>
+                                            {% if faq.status ==1 %}
+                                               <p style="color: green;">Active</p>
+                                            {% else %}
+                                               <p style="color: red;">Inactive</p>
+                                            {% endif %}
+                                           
+                                        </td>
+                                        <td>
+                                            <a href="/delete/{{faq.sno}}" type="button" class="btn btn-outline-primary btn-sm mx-1">Delete</button>
+                                            <a href="/update_faq/{{faq.sno}}" type="button" class="btn btn-outline-primary btn-sm mx-1">Update</button>
+                                            <!-- <a href="/view/{{faq.sno}}" type="button" class="btn btn-outline-primary btn-sm mx-0">View</button> -->
+                                                
+                                            </td>
+                                      </tr>
+                                      
+                                    {% endfor %}
+                                
+                                  
+                                </tbody>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                    {% endblock %}
+    
+
+
+
+
+
+            

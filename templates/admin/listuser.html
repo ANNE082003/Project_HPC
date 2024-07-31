@@ -1,0 +1,52 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+ 
+    <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="main-card mb-3 card">
+                        <div class="card-body">
+                    <div class="container">
+                        
+                    <div class="container my-3">
+                        <h2>List of Users</h2>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                
+                            
+                                <th scope="col">SNo.</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <!-- loop.index used to maintain continuity in sno even if an entry is deleted --> 
+                                    <th scope="row">{{loop.index}}</th>
+                                    <td>{{user.username}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.date_created}}</td>
+
+                                    <td>
+                                        <a href="/deleteuser/{{user.sno}}" type="button" class="btn btn-outline-primary btn-sm mx-1">Delete</button>
+                                        
+                                            
+                                        </td>
+                                  </tr>
+                                  
+                                {% endfor %}
+                            
+                              
+                            </tbody>
+                          </table>
+                    </div>
+               
+</div>
+</div>
+
+    
+{% endblock %}
+

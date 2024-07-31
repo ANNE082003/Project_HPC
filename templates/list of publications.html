@@ -1,0 +1,33 @@
+{% extends 'userlayout.html' %}
+{% block content %}
+    
+
+<div class="container my-3">
+    <h2>List of Publications</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SNo.</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">File_path</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for publication in publications %}
+            <tr>
+                <!-- loop.index used to maintain continuity in sno even if an entry is deleted --> 
+                <th scope="row">{{loop.index}}</th>
+                <td>{{publication.title}}</td>
+                <td>{{publication.author}}</td>
+                <td>{{publication.abstract}}</td>
+                
+              </tr>
+              
+            {% endfor %}
+        
+          
+        </tbody>
+      </table>
+      {% endblock %}

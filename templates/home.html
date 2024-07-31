@@ -1,0 +1,103 @@
+{% extends "userlayout.html" %}
+{% block content %}
+
+    <div class="container">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active" style="text-align: center;">
+                <img src="{{ url_for('static',filename='images/c1.png')}}" alt="HPC" width="900" height="350" >
+                
+              </div>
+              <div class="carousel-item" style="text-align: center;">
+                <img src="{{ url_for('static',filename='images/c2.png')}}" alt="HPC" width="900" height="350">
+              </div>
+              <div class="carousel-item" style="text-align: center;">
+                <img src="{{ url_for('static',filename='images/c3.png')}}" alt="HPC" width="900" height="350" >
+                
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+
+          <h2>Hardware & Software Architecture</h2>
+          <p>The latest addition to the ICTS HPC facility is the 2048-cores Intel cluster. This cluster is composed of 64 nodes, installed in the ICTS data center. Of the sixty-four, one head node and all others are execution nodes. This is a homogeneous cluster with each node consisting of 64 processing cores with hyperthreading enabled. 
+            The cluster nodes are connected using Intel Omnipath switches.</p>
+            <h3>Hardware Overview:</h3>
+            <p>The cluster has 64 nodes and the hardware configuration for each node is as follows:-</p>
+            <h4><b>Compute Nodes:</b></h4>
+            <ul style="list-style-type:disc;">
+                <li>Intel® Xeon® Processor Gold 6130, 2 processors (16 cores each) operating at 2.1 GHz clock speed<br></li>
+                <li>192 GB Main Memory DDR4 ECC SDRAM<br></li>
+                <li>1000GB SATA 6Gbps HDD for OS and system software<br></li>
+                <li>  Network: Intel Omnipath (3:1 blocking)<br></li>
+              </ul>  
+              <h4><b> Master Node:</b></h4>
+            <ul style="list-style-type:disc;">
+                <li>Intel® Xeon® Processor Gold 6130, 2 processors (16 cores each) operating at 2.1 GHz clock speed
+                    <br></li>
+                <li>384 GB Main Memory DDR4 ECC SDRAM<br></li>
+                <li>2 x 400 Gb Enterprise SSD for OS and system software<br></li>
+                <li> Network: Intel Omnipath (3:1 blocking)<br></li>
+              </ul>  <h4><b>Storages:</b></h4>
+              <ul style="list-style-type:disc;">
+                  <li>Network Attached Storage of 500 TB capacity usable after the RAID<br></li>
+                  <li><b>
+                    Parallel File System (PFS):
+                  </b>
+                    <br></li>
+                  <ul style="list-style-type:disc;">
+                  
+                  <li> Based on BeeGFS parallel file system<br></li>
+                  <li>   Total usable capacity 150 TB primary storage<br></li>
+                  <li>   Throughput 5 GB/s<br></li>
+                </ul>
+                <li>  Archiving Storage: Network Attached Storage of 550 TB capacity usable after the RAID<br></li>  
+                </ul>  
+                <!-- space for hpc_1.png -->
+                <center>
+                  <img src="{{ url_for('static',filename='images/hpc_1.png')}}" alt="HPC" width="350" height="250" >
+                </center>
+                
+                <h2>Software Architecture:</h2>
+          
+              <!-- space for hpc_1.png -->
+              <center>
+                <img src="{{ url_for('static',filename='images/hpc_2.png')}}" alt="HPC" width="350" height="250" >
+              </center>
+              
+              
+              
+              
+             
+             
+             
+              
+              
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script> -->
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    -->
+<!-- </body>
+
+</html> -->
+{% endblock %}
+  
+
+  

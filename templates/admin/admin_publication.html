@@ -1,0 +1,54 @@
+{% extends 'admin/admin_base.html' %}
+{% block content %}
+
+         
+<div class="container my-3">
+    <h2>List of Publications</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SNo.</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Abstract</th>
+            <th scope="col">file_path</th>
+            <th scope="col">Time</th>
+            <th scope="col">created_by</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for publication in publications %}
+            <tr>
+                <!-- loop.index used to maintain continuity in sno even if an entry is deleted --> 
+                <th scope="row">{{loop.index}}</th>
+                <td>{{publication.title}}</td>
+                <td>{{publication.author}}</td>
+                <td>{{publication.abstract}}</td>
+                <td>{{publication.file_path}}</td>
+                <td>{{publication.created_at}}</td>
+                <td>{{publication.created_by}}</td>
+                <td>
+                    <!-- {% if publication.published ==1 %} -->
+                    {% if publication.status == PublicationStatus.ACTIVE %}
+                       <p style="color: green;">Active</p>
+                    {% else %}
+                       <p style="color: red;">Inactive</p>
+                    {% endif %}
+                   
+                </td>
+                <td>
+                  <button type="submit" class="btn btn-primary">Publish</button>
+
+                    <a href="/not_publish/{{publication.sno}}" type="button" class="btn btn-outline-primary btn-sm mx-1">Not Publish</button>
+                   
+                    </td>
+              </tr>
+              
+            {% endfor %}
+        
+          
+        </tbody>
+      </table>
+{% endblock %}
